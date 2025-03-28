@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oromozi Scavenger</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        #phaser-game {
+            width: 800px;
+            height: 600px;
+            max-width: 100vw;
+            max-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Prevent any overflow from Phaser canvas */
+        }
+    </style>
+</head>
+<body>
+    <div id="phaser-game"></div>
+    <!-- Load Phaser from CDN with fallback to local -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <script>
+        // Fallback to local Phaser if CDN fails
+        if (typeof Phaser === 'undefined') {
+            document.write('<script src="lib/phaser.min.js"><\/script>');
+        }
+    </script>
+    <script src="fishingScene.js"></script>
+    <script src="campingScene.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

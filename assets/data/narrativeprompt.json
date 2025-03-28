@@ -1,0 +1,1115 @@
+{
+  "zones": {
+    "Outer Grasslands": [
+      {
+        "prompt": "A gentle breeze carries the scent of fresh hay and wildflowers. You sense a hidden bounty nearby.",
+        "options": [
+          "Follow the scent.",
+          "Collect a few wild herbs.",
+          "Continue walking."
+        ],
+        "outcomes": [
+          "You discover a small cache of herbs. (+5 Health, +7 Hunger)",
+          "The herbs boost your vitality. (+7 Thirst, +7 Stamina)",
+          "You miss the bounty and tire slightly. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The tall grass ripples like a sea, and in its swaying there is a glimmer of something unusual.",
+        "options": [
+          "Investigate the glimmer.",
+          "Rush past it.",
+          "Take a moment to observe."
+        ],
+        "outcomes": [
+          "You only find a broken tool. Nothing changes.",
+          "In your haste, you trip and lose a bit of stamina. (-7 Stamina)",
+          "Observing the area reveals a path to Shady Grove. (Travel to Shady Grove)"
+        ]
+      },
+      {
+        "prompt": "Sunlight dances on the dew-covered grass as you notice small animal tracks along a winding path.",
+        "options": [
+          "Follow the tracks.",
+          "Examine the surrounding flowers.",
+          "Ignore and move on."
+        ],
+        "outcomes": [
+          "The tracks lead to a patch of nourishing berries. (+7 Hunger, +7 Stamina)",
+          "You find only dried leaves, offering no real benefit.",
+          "The path offers no reward; you lose a little energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A soft rustling in the grass hints at movement—a possible creature or a hidden item.",
+        "options": [
+          "Investigate the rustling.",
+          "Hide and observe.",
+          "Ignore it completely."
+        ],
+        "outcomes": [
+          "A small animal scampers away, leaving behind a rare trinket. (+Loot)",
+          "Your cautious watchfulness restores your focus. (+7 Stamina)",
+          "Ignoring the noise leaves you with a mild loss of energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The sound of distant birds fills the air as the landscape stretches out in a gentle, inviting panorama.",
+        "options": [
+          "Sit and enjoy the view.",
+          "Search for any hidden objects.",
+          "Start walking to explore further."
+        ],
+        "outcomes": [
+          "The calm moment rejuvenates you. (+7 Stamina)",
+          "You discover a small, useful item hidden among the tall grass. (+Loot)",
+          "The time passing causes you to lose a bit of focus. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A patch of wild berries glows in the morning light, their colors vivid against the green grass.",
+        "options": [
+          "Pick and eat the berries.",
+          "Examine them carefully.",
+          "Ignore and keep moving."
+        ],
+        "outcomes": [
+          "The berries refresh you greatly. (+7 Hunger, +7 Thirst)",
+          "You learn which berries are safe and collect some. (+Loot)",
+          "You bypass the patch, missing a chance to refuel. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "In the distance, a solitary tree offers a welcome patch of shade on a sunny day.",
+        "options": [
+          "Rest under the tree.",
+          "Search the area around the tree.",
+          "Keep moving in the sunlight."
+        ],
+        "outcomes": [
+          "The rest restores your stamina. (+7 Stamina)",
+          "Beneath the tree you find a hidden trinket. (+Loot)",
+          "Exposure to the sun saps a little of your energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A gentle stream meanders through the grasslands, its clear water inviting you to take a sip.",
+        "options": [
+          "Drink from the stream.",
+          "Follow the stream upstream.",
+          "Ignore the stream."
+        ],
+        "outcomes": [
+          "The water quenches your thirst. (+7 Thirst)",
+          "Following the stream leads to a hidden cache. (+Loot)",
+          "You miss the chance to rehydrate and feel a little drained. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A curious glint catches your eye near a clump of wild grass.",
+        "options": [
+          "Investigate the glint.",
+          "Brush aside the grass and move on.",
+          "Take a cautious peek and then continue."
+        ],
+        "outcomes": [
+          "You uncover some worthless scraps. Nothing changes.",
+          "Your cautious step leaves you a bit winded. (-7 Stamina)",
+          "You get a fleeting glimpse of treasure but nothing more. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The air is filled with the hum of insects as the grass sways gently in the breeze.",
+        "options": [
+          "Search the area for natural remedies.",
+          "Rest and listen to the sound.",
+          "Quickly pass through."
+        ],
+        "outcomes": [
+          "You find a patch of healing herbs. (+5 Health, +7 Stamina)",
+          "The peaceful rest gives you a small boost. (+7 Stamina)",
+          "Hurrying on, you lose some energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A soft mist begins to settle over the grasslands as morning turns to noon.",
+        "options": [
+          "Embrace the mist and search for hidden dew drops.",
+          "Walk through the mist, alert for any movement.",
+          "Stop to rest in the cooling air."
+        ],
+        "outcomes": [
+          "You collect dew that refreshes you. (+7 Thirst, +7 Stamina)",
+          "The mist hides minor dangers, and you lose a bit of stamina. (-7 Stamina)",
+          "Resting in the mist restores your energy. (+7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A distant rumble suggests the approach of a light storm over the fields.",
+        "options": [
+          "Seek shelter under a large bush.",
+          "Press on quickly to outrun the storm.",
+          "Observe the storm from a safe distance."
+        ],
+        "outcomes": [
+          "The shelter keeps you safe and refreshed. (+7 Stamina)",
+          "You feel the storm’s chill sap your energy. (-7 Thirst, -7 Stamina)",
+          "Watching the storm leaves you both awed and slightly drained. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The grasslands reveal a shallow, sparkling pool that reflects the clear sky.",
+        "options": [
+          "Drink from the pool.",
+          "Search the pool’s edge for items.",
+          "Ignore the pool and continue your journey."
+        ],
+        "outcomes": [
+          "The cool water restores your thirst. (+7 Thirst)",
+          "You find only worthless shells. Nothing changes.",
+          "Not stopping to refresh leaves you a bit parched. (-7 Thirst)"
+        ]
+      },
+      {
+        "prompt": "A series of small mounds and gentle slopes create a natural, rolling landscape.",
+        "options": [
+          "Climb one of the mounds for a better view.",
+          "Stroll across the rolling hills.",
+          "Sit and enjoy the gentle motion."
+        ],
+        "outcomes": [
+          "The climb gives you a burst of energy. (+7 Stamina)",
+          "Walking the hills is pleasant but tires you slightly. (-7 Stamina)",
+          "Resting in the valley rejuvenates you. (+7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A flock of birds takes flight suddenly, scattering in every direction.",
+        "options": [
+          "Follow the birds to see where they lead.",
+          "Stand still and watch their flight.",
+          "Continue on without distraction."
+        ],
+        "outcomes": [
+          "Following the birds reveals a secret cache. (+Loot)",
+          "The spectacle leaves you inspired. (+7 Stamina)",
+          "Missing the chance to follow costs you a little energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The landscape shifts as you notice a change in the color of the grass and soil.",
+        "options": [
+          "Investigate the change.",
+          "Collect samples of the soil.",
+          "Ignore and move on."
+        ],
+        "outcomes": [
+          "The investigation uncovers a hidden herb patch. (+5 Health, +7 Hunger)",
+          "Your careful collection yields a clue to the next zone. (Travel to Shady Grove)",
+          "You pass by without gain and lose a bit of stamina. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A narrow trail marked by broken twigs appears to lead into a quieter part of the grasslands.",
+        "options": [
+          "Follow the trail.",
+          "Inspect the broken twigs.",
+          "Decide not to risk it and stay on the main path."
+        ],
+        "outcomes": [
+          "The trail leads to a path toward Shady Grove. (Travel to Shady Grove)",
+          "The clues in the twigs boost your confidence. (+7 Stamina)",
+          "Staying on the main path leaves you with minor fatigue. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A soft, rhythmic sound comes from a cluster of nearby bushes.",
+        "options": [
+          "Investigate the sound.",
+          "Carefully search the bushes for items.",
+          "Ignore the sound and continue walking."
+        ],
+        "outcomes": [
+          "The sound reveals a secret compartment with useful items. (+Loot)",
+          "Your careful search restores your energy. (+7 Stamina)",
+          "Missing the sound costs you a slight loss of stamina. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The landscape opens into a wide, sunlit plain with a distant shimmer on the horizon.",
+        "options": [
+          "Head toward the shimmer.",
+          "Stop to rest and take in the view.",
+          "Venture off the beaten path."
+        ],
+        "outcomes": [
+          "Approaching the shimmer reveals a route to Shady Grove. (Travel to Shady Grove)",
+          "The rest gives you a compound boost. (+7 Thirst, +7 Stamina)",
+          "Venting your curiosity drains your energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A soft rain begins to fall over the grasslands, gently refreshing the earth.",
+        "options": [
+          "Dance in the rain.",
+          "Collect the fresh droplets with your hands.",
+          "Take shelter and watch the rain."
+        ],
+        "outcomes": [
+          "Dancing in the rain revitalizes you. (+5 Health, +7 Stamina)",
+          "The water you collect quenches your thirst. (+7 Thirst)",
+          "Waiting out the rain leaves you a bit damp and tired. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A distant rumble of thunder hints at an approaching storm.",
+        "options": [
+          "Seek shelter quickly.",
+          "Search for any items before the storm hits.",
+          "Hurry on and hope for the best."
+        ],
+        "outcomes": [
+          "Sheltered, you regain a bit of energy. (+7 Stamina)",
+          "Your search uncovers a useful trinket. (+Loot)",
+          "Hurrying on, you lose a bit of health. (-7 Health)"
+        ]
+      },
+      {
+        "prompt": "A patch of wild mint grows near a small dry creek bed.",
+        "options": [
+          "Collect and chew the mint.",
+          "Examine the mint for medicinal properties.",
+          "Ignore the mint."
+        ],
+        "outcomes": [
+          "The mint refreshes you subtly. (+7 Thirst)",
+          "You discover its thirst-quenching properties. (+7 Thirst, +7 Stamina)",
+          "Ignoring it leaves you with a mild loss of energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A colorful butterfly flutters by, landing briefly on a flower.",
+        "options": [
+          "Follow the butterfly.",
+          "Take a picture of the moment.",
+          "Simply watch and enjoy."
+        ],
+        "outcomes": [
+          "Following it leads you to a hidden patch of resources. (+Loot)",
+          "The memory boosts your morale. (+7 Stamina)",
+          "You remain stationary and lose a bit of time. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A gentle murmur of a hidden brook tempts you from the tall grass.",
+        "options": [
+          "Investigate the source of the murmur.",
+          "Sit and listen for clues.",
+          "Ignore and keep moving."
+        ],
+        "outcomes": [
+          "The brook reveals a cache of fresh water. (+7 Thirst)",
+          "Listening restores your calm and energy. (+7 Stamina)",
+          "You pass by and feel slightly dehydrated. (-7 Thirst)"
+        ]
+      },
+      {
+        "prompt": "The landscape shows a subtle change in terrain as rolling hills become more prominent.",
+        "options": [
+          "Climb one of the hills.",
+          "Search the slopes for hidden items.",
+          "Walk along the base."
+        ],
+        "outcomes": [
+          "The climb rewards you with a view and a small loot. (+Loot)",
+          "You find only dust on the slopes. Nothing changes.",
+          "Strolling at the base tires you slightly. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A soft, distant melody seems to float on the breeze.",
+        "options": [
+          "Follow the sound.",
+          "Sit and let the melody soothe you.",
+          "Ignore and remain alert."
+        ],
+        "outcomes": [
+          "The melody leads you to an unexpected bounty. (+Loot)",
+          "The soothing sound gives you a compound boost. (+5 Health, +7 Stamina)",
+          "Staying alert costs you some energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A scattering of autumn-like leaves dances in the wind, unusual for the season.",
+        "options": [
+          "Collect the colorful leaves.",
+          "Search among them for hidden treasures.",
+          "Let them fall and move on."
+        ],
+        "outcomes": [
+          "The leaves conceal a small stash of supplies. (+Loot)",
+          "Your careful search yields a compound bonus. (+7 Thirst, +7 Hunger)",
+          "You feel a slight chill as you move on. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A distant hilltop catches your eye with a glint of light reflecting off its surface.",
+        "options": [
+          "Head toward the hilltop.",
+          "Examine the surrounding terrain.",
+          "Continue along your current path."
+        ],
+        "outcomes": [
+          "The hilltop hides a cache of fresh resources. (+Loot)",
+          "Your examination boosts your alertness. (+7 Stamina)",
+          "Missing the hilltop, you lose a bit of energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A solitary wild apple hangs from a low branch on a scraggly tree.",
+        "options": [
+          "Pick the apple and eat it.",
+          "Examine the tree for more fruit.",
+          "Leave the apple undisturbed."
+        ],
+        "outcomes": [
+          "The apple restores your hunger. (+7 Hunger, +7 Stamina)",
+          "Searching the tree yields a small bonus. (+Loot)",
+          "Ignoring it leaves you slightly hungry. (-7 Hunger)"
+        ]
+      },
+      {
+        "prompt": "A soft murmur of a hidden wind chime echoes faintly in the distance.",
+        "options": [
+          "Follow the sound to its source.",
+          "Try to catch a glimpse of the chime.",
+          "Ignore and keep walking."
+        ],
+        "outcomes": [
+          "The sound leads you to a secret stash. (+Loot)",
+          "Catching a glimpse restores your energy. (+7 Stamina)",
+          "Missing the chime, you lose a little focus. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The early afternoon sun casts long shadows over the grass, highlighting subtle features of the land.",
+        "options": [
+          "Study the shadows for clues.",
+          "Rest in the cool shade they provide.",
+          "Push onward in the bright light."
+        ],
+        "outcomes": [
+          "Your study reveals a hidden path. (+Loot)",
+          "Resting gives you a combined boost. (+7 Stamina, +7 Thirst)",
+          "Striding on without rest costs you energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A small, abandoned campsite lies quiet in a secluded part of the grasslands.",
+        "options": [
+          "Search the campsite for useful items.",
+          "Sit quietly to rest.",
+          "Leave the area immediately."
+        ],
+        "outcomes": [
+          "You uncover a few supplies left behind. (+Loot)",
+          "The rest refreshes you well. (+5 Health, +7 Stamina)",
+          "Leaving in haste, you feel a pang of regret. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "As dusk approaches, the grasslands glow with a warm, amber light.",
+        "options": [
+          "Admire the sunset.",
+          "Search for hidden items in the fading light.",
+          "Quickly set up camp."
+        ],
+        "outcomes": [
+          "The sunset fills you with calm energy. (+7 Stamina)",
+          "Your search reveals a small, valuable trinket. (+Loot)",
+          "Setting up camp hastily drains your energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "Night falls and the stars emerge over the grasslands, twinkling in the clear sky.",
+        "options": [
+          "Gaze at the stars and meditate.",
+          "Search for nocturnal clues.",
+          "Keep moving despite the darkness."
+        ],
+        "outcomes": [
+          "The starlight inspires you, boosting your health. (+5 Health, +7 Stamina)",
+          "Your careful search yields a hidden loot. (+Loot)",
+          "Moving in the dark causes minor injuries. (-7 Health)"
+        ]
+      },
+      {
+        "prompt": "You come across a small, serene pond hidden among the tall grass.",
+        "options": [
+          "Try fishing in the pond.",
+          "Drink from the pond.",
+          "Search the area around the pond."
+        ],
+        "outcomes": [
+          "You decide to try fishing. (Transition to FishingScene)",
+          "The water refreshes you. (+7 Thirst)",
+          "You find some useful herbs nearby. (+5 Health)"
+        ]
+      }
+    ],
+    "Shady Grove": [
+      {
+        "prompt": "In the dappled light of the grove, ancient trees whisper secrets of times past.",
+        "options": [
+          "Listen closely to the whispers.",
+          "Search beneath the trees for items.",
+          "Tread quietly on the winding path."
+        ],
+        "outcomes": [
+          "You carefully listen but find only silent trees. Nothing happens.",
+          "Your search finds a rare herb. (+7 Health, +7 Stamina)",
+          "Treading silently drains you a bit. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A narrow path winds deeper into the grove where the canopy darkens the forest floor.",
+        "options": [
+          "Follow the path cautiously.",
+          "Inspect the moss-covered stones.",
+          "Stay at the edge and observe."
+        ],
+        "outcomes": [
+          "The path leads to a secret glen with supplies. (+Loot)",
+          "You uncover medicinal herbs. (+7 Health, +7 Thirst)",
+          "Observing from the edge reveals a path to Arid Desert. (Travel to Arid Desert)"
+        ]
+      },
+      {
+        "prompt": "The grove grows dense and mysterious as shadows lengthen among the trees.",
+        "options": [
+          "Venture into the deeper shadows.",
+          "Pick a cluster of unusual flowers.",
+          "Mark your trail and move on."
+        ],
+        "outcomes": [
+          "You wander the shadows but find only damp bark. Nothing changes.",
+          "The flowers release a soothing aroma. (+7 Health, +7 Stamina)",
+          "Marking your trail slows you down. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A gentle stream winds its way through the grove, its water dark and reflective.",
+        "options": [
+          "Drink from the stream.",
+          "Follow it upstream for clues.",
+          "Sit beside it and rest."
+        ],
+        "outcomes": [
+          "The water revitalizes you. (+7 Thirst, +7 Stamina)",
+          "Following the stream leads nowhere special. Nothing changes.",
+          "Resting in the cool shade refreshes you. (+7 Health)"
+        ]
+      },
+      {
+        "prompt": "A low-hanging branch drips with condensation in the cool air of the grove.",
+        "options": [
+          "Break off a droplet for a drink.",
+          "Examine the branch for carvings.",
+          "Ignore it and continue on."
+        ],
+        "outcomes": [
+          "The drink gives you a minor boost. (+7 Thirst)",
+          "Carvings reveal ancient lore and a hidden path. (+Loot)",
+          "Not engaging with it leaves you slightly unprepared. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The air in the grove is heavy with mystery as a faint, eerie hum resonates.",
+        "options": [
+          "Investigate the source of the hum.",
+          "Search nearby bushes for clues.",
+          "Step back and stay alert."
+        ],
+        "outcomes": [
+          "The hum is eerie but reveals nothing. Nothing changes.",
+          "A hidden trinket is found among the leaves. (+7 Health)",
+          "Staying alert drains your nerves. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "Sunlight filters through the thick canopy, creating shifting patterns on the forest floor.",
+        "options": [
+          "Follow the dancing lights.",
+          "Examine the patterns closely.",
+          "Ignore the distraction and move on."
+        ],
+        "outcomes": [
+          "The light guides you to a small trove of supplies. (+Loot)",
+          "Close examination gives you a compound boost. (+7 Health, +7 Stamina)",
+          "Ignoring the beauty leaves you with a minor loss. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A fallen log in the grove is covered in vibrant fungi and moss.",
+        "options": [
+          "Inspect the log carefully.",
+          "Search underneath for hidden items.",
+          "Walk past it quickly."
+        ],
+        "outcomes": [
+          "The log conceals a rare medicinal mushroom. (+Loot)",
+          "You find a small cache of herbs beneath it. (+7 Health, +7 Thirst)",
+          "Hurrying past makes you miss a small reward. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A sudden rustle in the undergrowth suggests the presence of a hidden creature.",
+        "options": [
+          "Call out to see what it is.",
+          "Hide and wait for it to pass.",
+          "Chase after the sound."
+        ],
+        "outcomes": [
+          "The creature reveals a secret cache. (+Loot)",
+          "Hiding conserves your energy. (+7 Stamina)",
+          "Chasing the sound results in a minor injury. (-10 Health) [type=predator]"
+        ]
+      },
+      {
+        "prompt": "An ancient stone marked with cryptic symbols lies half-buried at the grove’s edge.",
+        "options": [
+          "Decipher the symbols.",
+          "Search around the stone for items.",
+          "Ignore the stone and keep moving."
+        ],
+        "outcomes": [
+          "The symbols reveal a hidden passage. (Travel to Arid Desert)",
+          "You find an old amulet nearby. (+Loot)",
+          "Ignoring the stone costs you a chance to learn more. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A soft wind stirs the leaves as twilight approaches, lending the grove an otherworldly feel.",
+        "options": [
+          "Embrace the magic of the twilight.",
+          "Search for luminous items in the dim light.",
+          "Retreat to a safe clearing."
+        ],
+        "outcomes": [
+          "The twilight grants you a compound boost. (+7 Health, +7 Stamina)",
+          "You uncover a glowing relic. (+Loot)",
+          "Retreating too early leaves you with a minor loss. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A hidden glen within the grove appears bathed in soft, ethereal light.",
+        "options": [
+          "Enter the glen to explore.",
+          "Collect a few wild berries nearby.",
+          "Sit and meditate in the glen."
+        ],
+        "outcomes": [
+          "You find only a rusted can. Nothing changes.",
+          "The berries are unusually nourishing. (+7 Hunger, +7 Thirst)",
+          "Meditation gives you a moderate boost. (+7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The grove suddenly darkens as thick fog rolls in unexpectedly.",
+        "options": [
+          "Hurry to escape the fog.",
+          "Search for a safe haven within the grove.",
+          "Wait for the fog to clear."
+        ],
+        "outcomes": [
+          "In your haste, you stumble and lose energy. (-7 Stamina)",
+          "You find shelter and conserve your strength. (+7 Stamina)",
+          "Waiting in the fog costs you time and energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A series of delicate, shimmering petals drift gently to the ground.",
+        "options": [
+          "Collect the petals as a token.",
+          "Follow the trail of petals.",
+          "Let them fall and enjoy the moment."
+        ],
+        "outcomes": [
+          "The petals are lovely but yield no benefit. Nothing changes.",
+          "Following them leads you to a small cache. (+Loot)",
+          "Enjoying the moment gives you a small boost. (+7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "An eerie silence falls over a secluded part of the grove as dusk nears.",
+        "options": [
+          "Investigate the silence.",
+          "Call out softly to break it.",
+          "Proceed cautiously without disturbance."
+        ],
+        "outcomes": [
+          "The silence is unnerving but yields no benefit. Nothing changes.",
+          "Your call echoes and draws something valuable. (+Loot)",
+          "Caution costs you a slight loss of energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A fallen branch is adorned with tiny, glistening droplets from the recent rain.",
+        "options": [
+          "Collect the droplets with your hands.",
+          "Examine the branch for carvings.",
+          "Simply admire the natural beauty."
+        ],
+        "outcomes": [
+          "The droplets are refreshing. (+7 Thirst)",
+          "Carvings hint at hidden lore and a secret item. (+Loot)",
+          "Admiration leaves you with a small loss of focus. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The soft murmur of a hidden brook is accompanied by an unusual, sweet fragrance.",
+        "options": [
+          "Follow the fragrance.",
+          "Search near the brook.",
+          "Ignore and keep moving."
+        ],
+        "outcomes": [
+          "Following the scent reveals rare flora. (+Loot)",
+          "A careful search near the brook yields useful items. (+Loot)",
+          "Ignoring the scent leaves you less nourished. (-7 Hunger)"
+        ]
+      },
+      {
+        "prompt": "A crumbling stone wall partially hidden by vines stands as a relic of an ancient time.",
+        "options": [
+          "Examine the wall closely.",
+          "Search the area behind it.",
+          "Pass by without stopping."
+        ],
+        "outcomes": [
+          "The wall reveals hidden inscriptions and a key item. (+Loot)",
+          "Behind the wall you find a cache of supplies. (+Loot)",
+          "Passing by means you miss potential gains. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The grove’s undergrowth rustles with unseen activity as night begins to fall.",
+        "options": [
+          "Investigate the rustling.",
+          "Light a small fire for safety.",
+          "Retreat to the edge of the grove."
+        ],
+        "outcomes": [
+          "Investigation leads to a hidden pouch of items. (+Loot)",
+          "The fire offers warmth and boosts your stamina. (+7 Stamina)",
+          "Retreating too hastily leaves you with a minor loss. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A patch of luminescent mushrooms glows softly on the forest floor.",
+        "options": [
+          "Collect some mushrooms.",
+          "Examine their glow for clues.",
+          "Step around them carefully."
+        ],
+        "outcomes": [
+          "The mushrooms restore your health slightly. (+7 Health)",
+          "Their glow hints at hidden secrets. (+Loot)",
+          "Avoiding them makes you lose a touch of vitality. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A hidden alcove in the grove is filled with soft moss and dappled light.",
+        "options": [
+          "Rest in the alcove.",
+          "Search it for any lost treasures.",
+          "Mark it as a safe spot and leave."
+        ],
+        "outcomes": [
+          "Resting here gives you a compound boost. (+7 Health, +7 Stamina)",
+          "You uncover a small relic. (+Loot)",
+          "Marking the spot uses up some of your energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A low fog creeps along the ground, obscuring parts of the grove in mystery.",
+        "options": [
+          "Move slowly through the fog.",
+          "Search for signs of life within it.",
+          "Hurry to clear the fog."
+        ],
+        "outcomes": [
+          "Moving slowly preserves your energy. (+7 Stamina)",
+          "You find a secret trinket shrouded in mist. (+Loot)",
+          "Hurrying results in a minor misstep. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A faint melody seems to be carried on the wind, its notes both beautiful and melancholic.",
+        "options": [
+          "Follow the melody to its source.",
+          "Let the melody soothe your soul.",
+          "Ignore it and continue your journey."
+        ],
+        "outcomes": [
+          "The melody leads to a rare enchanted item. (+Loot)",
+          "Its soothing power gives you a compound boost. (+7 Health, +7 Stamina)",
+          "Ignoring the song leaves you with a sense of loss. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A small clearing reveals a mosaic of wildflowers and ancient stone markers.",
+        "options": [
+          "Examine the stone markers.",
+          "Collect some of the vibrant flowers.",
+          "Sit and absorb the beauty of the clearing."
+        ],
+        "outcomes": [
+          "The markers hint at a long-forgotten secret. (+Loot)",
+          "The flowers are healing in nature. (+7 Health, +7 Hunger)",
+          "Sitting too long makes you miss an opportunity. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The grove quiets as a soft rain begins to fall, the droplets pattering on leaves.",
+        "options": [
+          "Embrace the rain and search the damp ground.",
+          "Find shelter and wait for it to pass.",
+          "Walk quickly to avoid getting too wet."
+        ],
+        "outcomes": [
+          "The rain reveals a hidden cache of supplies. (+Loot)",
+          "Taking shelter restores your strength. (+7 Stamina)",
+          "Rushing through leaves you a bit chilled. (-7 Health)"
+        ]
+      },
+      {
+        "prompt": "A secluded pond glimmers in the dappled light of the grove.",
+        "options": [
+          "Attempt to fish in the pond.",
+          "Collect water from the pond.",
+          "Explore the surroundings."
+        ],
+        "outcomes": [
+          "You take out your fishing gear. (Transition to FishingScene)",
+          "The water is cool and revitalizing. (+7 Thirst, +7 Stamina)",
+          "You discover a hidden cache near the pond. (+Loot)"
+        ]
+      }
+    ],
+    "Arid Desert": [
+      {
+        "prompt": "The scorching sun beats down on endless dunes, and the horizon shimmers with heat.",
+        "options": [
+          "Search for a rare water source.",
+          "Rest in the scant shade of a lone rock.",
+          "Push forward despite the heat."
+        ],
+        "outcomes": [
+          "You discover an oasis with a small pond (Transition to FishingScene)",
+          "You spot a path leading back to Outer Grasslands. (Travel to Outer Grasslands)",
+          "Pushing forward drains your energy severely. (-15 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The sand burns underfoot and a mirage dances on the horizon.",
+        "options": [
+          "Investigate the mirage.",
+          "Collect dust samples for clues.",
+          "Ignore and march on."
+        ],
+        "outcomes": [
+          "The mirage vanishes, leaving you parched. (-7 Thirst)",
+          "Dust clings to you, sapping your energy. (-7 Stamina)",
+          "Marching on in the heat wears you down. (-15 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A rocky outcrop offers a brief respite from the relentless sun.",
+        "options": [
+          "Climb the outcrop for a better view.",
+          "Search the rocky crevices for items.",
+          "Rest in its partial shade."
+        ],
+        "outcomes": [
+          "The climb is taxing but reveals a hidden cache. (+Loot, -7 Stamina)",
+          "You find only broken shards of rock. Nothing changes.",
+          "Resting provides little relief in the harsh heat. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A sudden sandstorm looms in the distance, darkening the sky with swirling dust.",
+        "options": [
+          "Seek shelter immediately.",
+          "Attempt to outrun the storm.",
+          "Hunker down and brace for impact."
+        ],
+        "outcomes": [
+          "The shelter saves you but leaves you drained. (-7 Stamina)",
+          "Outrunning the storm is futile; you lose health. (-15 Health) [type=fall]",
+          "Bracing yourself minimizes damage but costs energy. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The desert’s heat intensifies as you notice an unusual glint on a dune.",
+        "options": [
+          "Investigate the glint.",
+          "Shun the distraction and move on.",
+          "Cover your face to shield against the glare."
+        ],
+        "outcomes": [
+          "The glint is just a reflection. Nothing changes.",
+          "Ignoring it costs you an opportunity to recover. (-7 Stamina)",
+          "Shielding yourself gives a small compound boost. (+7 Thirst, +7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A dried-up riverbed stretches out before you, its cracked surface reflecting the brutal light.",
+        "options": [
+          "Search the riverbed for hidden water.",
+          "Look for artifacts among the ruins.",
+          "Avoid the desolation and move quickly."
+        ],
+        "outcomes": [
+          "Your search yields a small puddle to drink from. (+7 Thirst)",
+          "You only find some desert debris. Nothing changes.",
+          "Moving quickly tires you out in the heat. (-15 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The wind howls across the dunes, carrying with it a biting chill that belies the heat.",
+        "options": [
+          "Huddle and conserve energy.",
+          "Search for any signs of shelter.",
+          "Keep moving despite the discomfort."
+        ],
+        "outcomes": [
+          "Huddling helps, but you still lose some health. (-7 Health)",
+          "You discover a small cave but it's empty. Nothing changes.",
+          "Persisting in discomfort drains you. (-15 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A rare desert flower struggles to bloom amidst the sand, its petals a vivid contrast to the dunes.",
+        "options": [
+          "Examine the flower closely.",
+          "Pluck the flower for study.",
+          "Let it be and move on."
+        ],
+        "outcomes": [
+          "Examining the flower restores your hope. (+7 Health, +7 Thirst)",
+          "Plucking it provides a compound bonus. (+Loot)",
+          "Moving on without it leaves you indifferent. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The oppressive silence of the desert is broken only by the sound of your own footsteps.",
+        "options": [
+          "Take a moment to meditate.",
+          "Push forward with determination.",
+          "Search for any signs of life."
+        ],
+        "outcomes": [
+          "Meditation grants you a brief respite. (+7 Stamina)",
+          "Pushing forward aggressively costs you health. (-15 Health)",
+          "Your search uncovers a forgotten relic. (+Loot)"
+        ]
+      },
+      {
+        "prompt": "A distant rumble hints at an approaching sand avalanche.",
+        "options": [
+          "Dash to higher ground.",
+          "Crouch and brace for impact.",
+          "Seek shelter behind a rock formation."
+        ],
+        "outcomes": [
+          "The dash saves you but you lose energy. (-15 Stamina)",
+          "Bracing yourself minimizes the damage. (-7 Health) [type=fall]",
+          "Sheltering preserves some strength. (+7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The desert reveals an ancient ruin partially buried in sand, its purpose long forgotten.",
+        "options": [
+          "Explore the ruin.",
+          "Search for clues around it.",
+          "Ignore it and continue."
+        ],
+        "outcomes": [
+          "Inside, you find relics that boost your resources. (+Loot)",
+          "Clues here lead to hidden supplies. Nothing changes.",
+          "Ignoring it leaves you with a nagging loss. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The horizon is painted in shades of red and orange as the sun nears its peak.",
+        "options": [
+          "Stop to admire the view.",
+          "Search the area for any anomalies.",
+          "Press on quickly to avoid the heat."
+        ],
+        "outcomes": [
+          "Admiring the view calms you briefly. (+7 Stamina)",
+          "Your search reveals only scorching sand. Nothing changes.",
+          "Rushing on leaves you exhausted. (-15 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A sudden chill in the air hints at an unexpected change in the desert’s mood.",
+        "options": [
+          "Wrap yourself in your cloak.",
+          "Search for any shelter immediately.",
+          "Ignore the chill and continue."
+        ],
+        "outcomes": [
+          "Wrapping up minimizes the cold’s effect. (+7 Stamina)",
+          "Shelter is found and you recover slightly. (+7 Health)",
+          "Ignoring the chill leaves you with a mild loss. (-7 Health)"
+        ]
+      },
+      {
+        "prompt": "The sand underfoot seems to shift as if alive, revealing subtle patterns.",
+        "options": [
+          "Examine the shifting sand.",
+          "Mark the area for later study.",
+          "Hurry past to avoid potential pitfalls."
+        ],
+        "outcomes": [
+          "Your examination uncovers a hidden token. (+Loot)",
+          "Marking the area boosts your caution. (+7 Stamina)",
+          "Hurrying causes you to stumble. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A lone, withered tree stands as a testament to the desert’s harshness.",
+        "options": [
+          "Search around the tree for signs of life.",
+          "Rest in its sparse shade.",
+          "Pass by quickly."
+        ],
+        "outcomes": [
+          "Around the tree you find a relic of old. (+Loot)",
+          "The shade offers a compound respite. (+7 Health, +7 Stamina)",
+          "Passing by leaves you battered by the elements. (-15 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A sudden gust of wind kicks up a swirl of sand, momentarily blinding you.",
+        "options": [
+          "Shield your eyes and wait it out.",
+          "Dash forward blindly.",
+          "Find cover immediately."
+        ],
+        "outcomes": [
+          "Waiting it out costs you little energy. (+7 Stamina)",
+          "Dashing forward causes you to lose balance. (-10 Health) [type=fall]",
+          "Covering up saves you from serious harm. (+7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "The relentless desert heat and isolation weigh heavily on your mind.",
+        "options": [
+          "Take a moment to meditate on your journey.",
+          "Push through with determination.",
+          "Search your supplies for something to energize you."
+        ],
+        "outcomes": [
+          "Meditation offers a compound boost. (+7 Health, +7 Stamina)",
+          "Determination alone isn’t enough; you feel the drain. (-15 Stamina)",
+          "Checking your supplies yields no real gain. Nothing changes."
+        ]
+      },
+      {
+        "prompt": "A dried-up cactus stands oddly in the barren landscape, its spines glistening in the sun.",
+        "options": [
+          "Examine the cactus closely.",
+          "Attempt to extract any moisture.",
+          "Ignore the cactus and move on."
+        ],
+        "outcomes": [
+          "The object is just a reflective stone. Nothing changes.",
+          "Extracting moisture restores a bit of thirst. (+7 Thirst)",
+          "Ignoring it leaves you parched. (-7 Thirst)"
+        ]
+      },
+      {
+        "prompt": "The desert floor is etched with ancient symbols, half-erased by time and wind.",
+        "options": [
+          "Try to decipher the symbols.",
+          "Search the nearby area for relics.",
+          "Walk past without stopping."
+        ],
+        "outcomes": [
+          "Deciphering the symbols reveals a lost technique. (+Loot)",
+          "You uncover a small, valuable item nearby. Nothing changes.",
+          "Walking past results in missed opportunities. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A low, ominous rumble shakes the desert as a dust cloud gathers in the distance.",
+        "options": [
+          "Take cover behind a large boulder.",
+          "Dash into a nearby crevice.",
+          "Try to outrun the dust cloud."
+        ],
+        "outcomes": [
+          "Taking cover saves you but you lose some health. (-7 Health)",
+          "The crevice shields you and you recover slightly. (+7 Stamina)",
+          "Outrunning the cloud drains you severely. (-15 Stamina)"
+        ]
+      },
+      {
+        "prompt": "As dusk falls, the desert transforms into a place of haunting beauty and harsh realities.",
+        "options": [
+          "Stop to admire the twilight.",
+          "Search for any remaining supplies.",
+          "Quickly set up camp."
+        ],
+        "outcomes": [
+          "Admiring the twilight gives you a compound boost. (+7 Health, +7 Stamina)",
+          "Your search reveals a small cache of items. (+Loot)",
+          "Setting up camp hastily leaves you exhausted. (-15 Stamina)"
+        ]
+      },
+      {
+        "prompt": "A chill descends as the desert cools unexpectedly under a starless sky.",
+        "options": [
+          "Wrap yourself in any available cloth.",
+          "Search for shelter in a rock formation.",
+          "Keep moving to generate heat."
+        ],
+        "outcomes": [
+          "Wrapping up preserves your strength. (+7 Stamina)",
+          "Shelter is found and you recover slightly. (+7 Health)",
+          "Moving produces too little warmth; you lose health. (-7 Health)"
+        ]
+      },
+      {
+        "prompt": "In the near-darkness, you notice a glint of metal partially buried in the sand.",
+        "options": [
+          "Dig to uncover the object.",
+          "Examine the surrounding area carefully.",
+          "Ignore it and continue your journey."
+        ],
+        "outcomes": [
+          "Checking further reveals nothing but scrap. Nothing changes.",
+          "Your careful search yields minor supplies. (+7 Health)",
+          "Ignoring it leaves you with a lingering sense of loss. (-7 Stamina)"
+        ]
+      },
+      {
+        "prompt": "You stumble upon a rare oasis in the middle of the desert.",
+        "options": [
+          "Fish in the oasis waters.",
+          "Drink deeply from the oasis.",
+          "Search for any hidden treasures."
+        ],
+        "outcomes": [
+          "You cast your line into the water. (transition to fishing scene)",
+          "The oasis water restores your thirst. (+7 Thirst)",
+          "You find an ancient relic buried in the sand. (+Loot)"
+        ]
+      }
+    ]
+  }
+}
