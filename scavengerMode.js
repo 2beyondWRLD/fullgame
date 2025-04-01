@@ -96,6 +96,30 @@ function createScavengerMode(data) {
   this.physics.world.setBounds(0, 0, this.background.displayWidth, this.background.displayHeight);
   this.cameras.main.setBounds(0, 0, this.background.displayWidth, this.background.displayHeight);
 
+  // Add test fishing spot interactable
+  const fishingSpot = this.add.rectangle(
+    Phaser.Math.Between(100, this.background.displayWidth - 100),
+    Phaser.Math.Between(100, this.background.displayHeight - 100),
+    32, 32, 0x00ff00, 0.5
+  );
+  fishingSpot.setInteractive({ useHandCursor: true });
+  fishingSpot.on('pointerdown', () => {
+    console.log('Fishing spot clicked, transitioning to FishingScene');
+    this.scene.start('FishingScene', {
+      inventory: this.localInventory,
+      playerStats: this.playerStats,
+      zone: zoneData
+    });
+  });
+
+  // Add visual indicator for the fishing spot
+  const fishingIcon = this.add.text(
+    fishingSpot.x,
+    fishingSpot.y - 20,
+    '🎣',
+    { fontSize: '24px' }
+  ).setOrigin(0.5);
+
   // Foreground layer
   const mapData = this.cache.json.get(zoneData.mapKey);
   if (mapData?.layers) {

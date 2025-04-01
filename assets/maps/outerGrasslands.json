@@ -4,12 +4,78 @@
  "layers":[
         {
          "id":4,
-         "image":"..\/backgrounds\/outerGrasslands.png",
+         "image":"\/\/wsl.localhost\/Ubuntu-20.04\/home\/redbeard\/gameboy-scavenger\/frontend\/assets\/backgrounds\/outerGrasslands.png",
          "imageheight":2400,
          "imagewidth":2400,
          "name":"outergrasslands",
          "opacity":1,
          "type":"imagelayer",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"fishing spots",
+         "objects":[
+                {
+                 "height":67.6389769604734,
+                 "id":186,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":71.0209258084972,
+                 "x":635.806383428451,
+                 "y":1917.56499682942
+                }, 
+                {
+                 "height":57.4931304164024,
+                 "id":187,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":84.5487212005917,
+                 "x":1092.36947791165,
+                 "y":1914.1830479814
+                }, 
+                {
+                 "height":64.2570281124495,
+                 "id":188,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64.2570281124498,
+                 "x":632.424434580427,
+                 "y":2242.2320862397
+                }, 
+                {
+                 "height":50.729232720355,
+                 "id":189,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":87.9306700486154,
+                 "x":1755.23145212429,
+                 "y":2157.6833650391
+                }, 
+                {
+                 "height":54.1111815683789,
+                 "id":190,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":108.222363136757,
+                 "x":2177.97505812725,
+                 "y":2161.06531388713
+                }],
+         "opacity":1,
+         "type":"objectgroup",
          "visible":true,
          "x":0,
          "y":0
@@ -775,7 +841,7 @@
         }, 
         {
          "id":5,
-         "image":"..\/foregrounds\/outerGrasslandsForeground.png",
+         "image":"\/\/wsl.localhost\/Ubuntu-20.04\/home\/redbeard\/gameboy-scavenger\/frontend\/assets\/foregrounds\/outerGrasslandsForeground.png",
          "imageheight":2400,
          "imagewidth":2400,
          "name":"outerGrasslandsForeground",
@@ -785,8 +851,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":6,
- "nextobjectid":186,
+ "nextlayerid":7,
+ "nextobjectid":191,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.1",

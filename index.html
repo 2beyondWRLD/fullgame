@@ -38,8 +38,15 @@
             document.write('<script src="lib/phaser.min.js"><\/script>');
         }
     </script>
+    <!-- Load all scene files first -->
     <script src="fishingScene.js"></script>
     <script src="campingScene.js"></script>
     <script src="main.js"></script>
+    <!-- Initialize game after all scenes are loaded -->
+    <script>
+        window.addEventListener('load', function() {
+            const game = new Phaser.Game(GAME_CONFIG);
+        });
+    </script>
 </body>
 </html>

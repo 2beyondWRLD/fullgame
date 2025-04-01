@@ -498,12 +498,21 @@ async function applyOutcome(scene, outcomeText) {
   }
 
   // Check for fishing scene transition
-  if (outcomeText.toLowerCase().includes("transition to fishing scene")) {
+  if (outcomeText.toLowerCase().includes("transition to fishing scene") || 
+      outcomeText.toLowerCase().includes("you take out your fishing gear")) {
     console.log("Transitioning to FishingScene");
+    console.log("Current inventory:", scene.localInventory);
+    console.log("Current zone:", scene.currentZone);
+    console.log("Current player stats:", scene.playerStats);
+    
+    // Save current inventory and stats
+    const currentInventory = [...scene.localInventory];
+    const currentStats = { ...scene.playerStats };
+    
     scene.scene.start('FishingScene', {
-      inventory: scene.localInventory,
+      inventory: currentInventory,
       zone: scene.currentZone,
-      playerStats: scene.playerStats
+      playerStats: currentStats
     });
     return;
   }
@@ -1404,12 +1413,21 @@ function showRoyalCategoryScreen(scene, category, items) {
   const options = items.map(item => ({
     label: `${item.item} - ${item.price} OROMOZI`,
     callback: async () => {
-      if (scene.playerStats.oromozi >= item.price) {
-        scene.playerStats.oromozi -= item.price;
-        addToInventory(scene, item.item);
-        alert(`Purchased ${item.item} for ${item.price} OROMOZI (simulated).`);
+      let quantityStr = prompt(`How many ${item.item} would you like to buy? (1-99):`, "1");
+      let quantity = parseInt(quantityStr, 10);
+      
+      if (isNaN(quantity) || quantity < 1 || quantity > 99) {
+        alert("Invalid quantity. Please enter a number between 1 and 99.");
+        return;
+      }
+      
+      const totalCost = item.price * quantity;
+      if (scene.playerStats.oromozi >= totalCost) {
+        scene.playerStats.oromozi -= totalCost;
+        addToInventory(scene, item.item, quantity);
+        alert(`Purchased ${quantity} ${item.item} for ${totalCost} OROMOZI (simulated).`);
       } else {
-        alert("Insufficient OROMOZI to purchase this item!");
+        alert(`Insufficient OROMOZI! You need ${totalCost} OROMOZI for ${quantity} ${item.item}.`);
       }
       updateHUD(scene);
       clearButtons(scene);
@@ -1873,123 +1891,7 @@ function handleVillageContractInteraction(scene, obj) {
           showDialog(scene, `It's ${isNearNight ? "getting dark" : "night"}, do you want to set up camp?\n(Press SPACE to confirm)`);
           scene.input.keyboard.once("keydown-SPACE", () => {
             if (hasCampingMaterials(scene)) {
-              console.log('Camping setup initiated');
-              hideDialog(scene);
-              
-              // Remove camping materials
-              removeFromInventory(scene, "Stick", 2);
-              removeFromInventory(scene, "Cloth", 1);
-              updateHUD(scene);
-              
-              // Create a container for the camping setup progress
-              const progressContainer = scene.add.container(scene.cameras.main.centerX, scene.cameras.main.centerY);
-              
-              // Add background
-              const background = scene.add.rectangle(0, 0, 300, 80, 0x000000, 0.7);
-              background.setStrokeStyle(2, 0xffffff);
-              progressContainer.add(background);
-              
-              // Add title text
-              const titleText = scene.add.text(0, -25, "Setting up camp...", { 
-                fontSize: '18px', 
-                color: '#ffffff' 
-              }).setOrigin(0.5);
-              progressContainer.add(titleText);
-              
-              // Add progress bar background
-              const progressBg = scene.add.rectangle(0, 10, 250, 20, 0x333333);
-              progressContainer.add(progressBg);
-              
-              // Add progress bar fill
-              const progressBar = scene.add.rectangle(-125, 10, 0, 20, 0x00ff00);
-              progressBar.setOrigin(0, 0.5);
-              progressContainer.add(progressBar);
-              
-              // Add progress text
-              const progressText = scene.add.text(0, 10, "0%", { 
-                fontSize: '12px', 
-                color: '#ffffff' 
-              }).setOrigin(0.5);
-              progressContainer.add(progressText);
-              
-              // Set depth to ensure visibility
-              progressContainer.setDepth(1000);
-              
-              // Camping setup duration (90 seconds)
-              const campSetupDuration = 90;
-              let elapsedTime = 0;
-              
-              // Create and start the timer
-              const campingTimer = scene.time.addEvent({
-                delay: 1000, // Update every second
-                callback: () => {
-                  elapsedTime++;
-                  const progress = elapsedTime / campSetupDuration;
-                  
-                  // Update progress bar
-                  progressBar.width = 250 * progress;
-                  progressText.setText(`${Math.floor(progress * 100)}%`);
-                  
-                  if (elapsedTime >= campSetupDuration) {
-                    // Stop the timer
-                    campingTimer.remove();
-                    
-                    // Change progress bar to blue to indicate completion
-                    progressBar.fillColor = 0x0088ff;
-                    
-                    // Replace progress text with "ENTER CAMP"
-                    progressText.setText("ENTER CAMP");
-                    progressText.setFontSize(16);
-                    
-                    // Make the entire progress bar clickable
-                    progressBg.setInteractive({ useHandCursor: true });
-                    progressBar.setInteractive({ useHandCursor: true });
-                    progressText.setInteractive({ useHandCursor: true });
-                    
-                    // Add click event to enter camping scene
-                    const enterCampFunc = () => {
-                      // Remove all UI elements
-                      progressContainer.destroy();
-                      
-                      // Save current inventory to pass to camping scene
-                      const currentInventory = [...scene.inventory];
-                      
-                      // Start camping scene with inventory
-                      scene.scene.start('CampingScene', {
-                        inventory: currentInventory,
-                        playerStats: scene.playerStats,
-                        zone: zoneList.find(z => z.name === "Village")
-                      });
-                    };
-                    
-                    progressBg.on('pointerdown', enterCampFunc);
-                    progressBar.on('pointerdown', enterCampFunc);
-                    progressText.on('pointerdown', enterCampFunc);
-                  }
-                },
-                callbackScope: scene,
-                loop: true
-              });
-              
-              // Allow canceling the setup with ESC key
-              const escKey = scene.input.keyboard.addKey('ESC');
-              const escHandler = () => {
-                campingTimer.remove();
-                progressContainer.destroy();
-                scene.input.keyboard.removeKey('ESC');
-                
-                // Return camping materials
-                addToInventory(scene, "Stick", 2);
-                addToInventory(scene, "Cloth", 1);
-                updateHUD(scene);
-                
-                showDialog(scene, "Camp setup canceled. Materials returned to inventory.\n(Press SPACE to continue)");
-                scene.input.keyboard.once("keydown-SPACE", () => {
-                  hideDialog(scene);
-                });
-              };
-              
-              escKey.on('down', escHandler);
+              initiateCampingSetup(scene);
             } else {
               showDialog(scene, "You need 2 sticks and 1 cloth to set up camp.\n(Press SPACE to continue)");
               scene.input.keyboard.once("keydown-SPACE", () => {
@@ -2766,6 +2668,7 @@ function preload() {
   this.load.json("ShadyGroveMap", "assets/maps/shadyGrove.json");
   this.load.json("AridDesertMap", "assets/maps/aridDesert.json");
   this.load.json("villageCommonsMap", "assets/maps/villageCommonsMap.json");
+  this.load.json("fishing_map", "assets/maps/fishing_lake.json");
 
   this.load.image("outerGrasslands", "assets/backgrounds/outerGrasslands.png");
   this.load.image("shadyGrove", "assets/backgrounds/shadyGrove.png");
@@ -2774,6 +2677,15 @@ function preload() {
   this.load.image("outerGrasslandsForeground", "assets/foregrounds/outerGrasslandsForeground.png");
   this.load.image("shadyGroveForeground", "assets/foregrounds/shadyGroveForeground.png");
   this.load.image("aridDesertForeground", "assets/foregrounds/aridDesertForeground.png");
+
+  // Fishing scene assets
+  this.load.image("lake", "assets/images/lake.png");
+  this.load.image("lake_foreground", "assets/images/lake_foreground.png");
+  this.load.image("fishing_pole", "assets/images/fishing_pole.png");
+  this.load.image("bobber", "assets/images/bobber.png");
+  this.load.image("menu_icon", "assets/images/menu.png");
+  this.load.spritesheet("boat_idle", "assets/images/boat_idle.png", { frameWidth: 163, frameHeight: 224, margin: 0, spacing: 0 });
+  this.load.spritesheet("boat_moving", "assets/images/boat_moving.png", { frameWidth: 163, frameHeight: 224, margin: 0, spacing: 0 });
 
   this.load.spritesheet("player", "assets/sprites/player.png", {
     frameWidth: 48,
@@ -2820,6 +2732,9 @@ function createScene() {
     console.log("Defaulting zone to Village with preloaded loot items.");
   }
 
+  // Initialize narrative screen
+  this.narrativeScreen = SCREEN_NONE;
+
   const existingOromozi = this.playerStats ? this.playerStats.oromozi : 1000;
   const existingLevel = this.playerStats ? this.playerStats.level : 1;
   const existingExp = this.playerStats ? this.playerStats.experience : 0;
@@ -2840,7 +2755,6 @@ function createScene() {
   this.promptCount = this.scene.settings.data.promptCount || 0;
   this.deposits = this.deposits || [];
   this.listedItems = this.listedItems || [];
-  this.tradeListings = this.tradeListings || [];
   initEquippedData(this);
 
   // Initialize flags
@@ -3058,6 +2972,80 @@ function createScene() {
             rect.setOrigin(0, 0);
             this.physics.add.existing(rect, true);
             this.obstacles.add(rect);
+          });
+        } else if (layer.type === "objectgroup" && layer.name === "fishing spots") {
+          layer.objects.forEach(obj => {
+            // Create fishing spot hitbox
+            const spot = this.add.rectangle(
+              obj.x * bgScale,
+              obj.y * bgScale,
+              obj.width * bgScale,
+              obj.height * bgScale,
+              0x0000ff,
+              0.2
+            );
+            spot.setOrigin(0, 0);
+            spot.setInteractive();
+            
+            // Add visual indicator
+            const indicator = this.add.sprite(
+              obj.x * bgScale + (obj.width * bgScale / 2),
+              obj.y * bgScale + (obj.height * bgScale / 2),
+              'loot_crate'
+            ).setScale(bgScale);
+            indicator.setTint(0x0000ff);
+            
+            // Add hover effect
+            spot.on('pointerover', () => {
+              indicator.setTint(0x00ffff);
+              const label = this.add.text(
+                spot.x + spot.width / 2,
+                spot.y - 10,
+                'Fishing Spot',
+                {
+                  font: '14px Arial',
+                  fill: '#ffffff',
+                  stroke: '#000000',
+                  strokeThickness: 3
+                }
+              ).setOrigin(0.5, 1).setDepth(1000);
+              spot.label = label;
+            });
+            
+            spot.on('pointerout', () => {
+              indicator.setTint(0x0000ff);
+              if (spot.label) {
+                spot.label.destroy();
+                spot.label = null;
+              }
+            });
+            
+            // Handle fishing spot click
+            spot.on('pointerdown', () => {
+              // Check if player has already fished today
+              const gameTime = this.registry.get('gameTime') || 0;
+              const lastFishingDay = this.registry.get('lastFishingDay') || -1;
+              const currentDay = Math.floor(gameTime / (24 * 60 * 60)); // Convert seconds to days
+              
+              if (currentDay <= lastFishingDay) {
+                showDialog(this, "You've already gone fishing today.\nTry again tomorrow!\n(Press SPACE to continue)");
+                return;
+              }
+              
+              // Set last fishing day
+              this.registry.set('lastFishingDay', currentDay);
+              
+              // Transition to fishing scene
+              this.cameras.main.fadeOut(500);
+              this.time.delayedCall(500, () => {
+                this.scene.start('FishingScene', {
+                  returnScene: 'MainGameScene',
+                  returnZone: zoneList.find(z => z.name === this.currentZone),
+                  inventory: this.localInventory,
+                  playerStats: this.playerStats
+                });
+              });
+            });
           });
         } else if (
           layer.type === "imagelayer" &&
@@ -3698,7 +3686,7 @@ function handlePlayerDeath(scene) {
 
 function updateScene(time, delta) {
   if (this.isRestarting) return;
-
+  
   if (!this.player || !this.player.body) return;
 
   // Update game time
@@ -3881,32 +3869,7 @@ function updateScene(time, delta) {
           showChoices(this);
         } else if (this.narrativeScreen === SCREEN_CAMPING_PROMPT) {
           if (hasCampingMaterials(this)) {
-            console.log('Camping setup initiated');
-            hideDialog(this);
-            
-            // Enhanced camping effect
-            this.cameras.main.flash(500, 100, 100, 0);
-            
-            // Camping benefits
-            this.playerStats.health = Math.min(this.playerStats.health + 30, 100); 
-            this.playerStats.stamina = Math.min(this.playerStats.stamina + 50, 100);
-            this.playerStats.hunger = Math.min(this.playerStats.hunger + 20, 100);
-            this.playerStats.thirst = Math.min(this.playerStats.thirst + 30, 100);
-            
-            // Use camping materials
-            removeFromInventory(this, "Stick", 2);
-            removeFromInventory(this, "Cloth", 1);
-            
-            createSimpleEffect(this, this.player.x, this.player.y, 0xff9900);
-            
-            // Update UI and show confirmation
-            updateHUD(this);
-            this.narrativeScreen = SCREEN_NONE;
-            
-            showDialog(this, "You set up camp and rest for a while. Your stats have improved!\n(Press SPACE to continue)");
-            this.input.keyboard.once("keydown-SPACE", () => {
-              hideDialog(this);
-            });
+            initiateCampingSetup(this);
           } else {
             showDialog(this, "You need 2 sticks and 1 cloth to set up camp.\n(Press SPACE to continue)");
             this.input.keyboard.once("keydown-SPACE", () => {
@@ -3948,7 +3911,7 @@ function updateScene(time, delta) {
     this.applyAttackDamage(); // Call directly for immediate feedback
     
     // Check for crate interactions during attack
-    if (this.lootCrates) {
+    if (this.lootCrates && this.currentZone !== "Village") {
       const crates = this.lootCrates.getChildren();
       const attackRange = 60; // Increased range for better hit detection
       
@@ -4150,6 +4113,7 @@ class MenuScene extends Phaser.Scene {
   }
 }
 
+// Game configuration
 const config = {
   type: Phaser.AUTO,
   width: 800,
@@ -4172,7 +4136,107 @@ const config = {
     maxWidth: 800,
     maxHeight: 600
   },
-  scene: [MenuScene, MainGameScene]
+  scene: [MenuScene, MainGameScene, CampingScene, FishingScene]
 };
 
 const game = new Phaser.Game(config);
+
+function initiateCampingSetup(scene) {
+  console.log("Initiating camping setup...");
+  hideDialog(scene);
+  
+  // Remove camping materials from inventory
+  removeFromInventory(scene, "Stick", 2);
+  removeFromInventory(scene, "Cloth", 1);
+  updateHUD(scene);
+  
+  // Create progress container
+  const progressContainer = scene.add.container(0, 0);
+  progressContainer.setDepth(10000);
+  
+  // Create background
+  const bg = scene.add.rectangle(400, 300, 400, 200, 0x000000, 0.7);
+  progressContainer.add(bg);
+  
+  // Create title text
+  const titleText = scene.add.text(400, 200, "Setting up camp...", {
+    font: "24px Arial",
+    fill: "#ffffff",
+    stroke: "#000000",
+    strokeThickness: 4
+  }).setOrigin(0.5);
+  progressContainer.add(titleText);
+  
+  // Create progress bar background
+  const progressBg = scene.add.rectangle(400, 300, 300, 20, 0x333333);
+  progressContainer.add(progressBg);
+  
+  // Create progress bar
+  const progressBar = scene.add.rectangle(250, 300, 0, 20, 0x00ff00);
+  progressContainer.add(progressBar);
+  
+  // Create progress text
+  const progressText = scene.add.text(400, 350, "0%", {
+    font: "20px Arial",
+    fill: "#ffffff",
+    stroke: "#000000",
+    strokeThickness: 2
+  }).setOrigin(0.5);
+  progressContainer.add(progressText);
+  
+  // Set up timer (10 seconds for testing)
+  let elapsedTime = 0;
+  const totalTime = 10; // Changed from 90 to 10 seconds for testing
+  
+  const timer = scene.time.addEvent({
+    delay: 1000,
+    callback: () => {
+      elapsedTime++;
+      const progress = (elapsedTime / totalTime) * 100;
+      
+      // Update progress bar
+      progressBar.width = (progress / 100) * 300;
+      progressBar.x = 250 + (progressBar.width / 2);
+      
+      // Update progress text
+      progressText.setText(`${Math.floor(progress)}%`);
+      
+      // When complete, change color and make interactive
+      if (progress >= 100) {
+        progressBar.setFillStyle(0x00ff00);
+        progressText.setText("ENTER CAMP");
+        progressText.setInteractive();
+        progressText.on('pointerdown', () => {
+          const currentZone = zoneList.find(z => z.name === scene.currentZone);
+          scene.scene.start('CampingScene', {
+            inventory: scene.localInventory,
+            playerStats: scene.playerStats,
+            zone: currentZone
+          });
+        });
+      }
+    },
+    loop: true
+  });
+  
+  // Handle ESC key to cancel
+  const escHandler = () => {
+    // Return materials to inventory
+    addToInventory(scene, "Stick", 2);
+    addToInventory(scene, "Cloth", 1);
+    updateHUD(scene);
+    
+    // Clean up
+    timer.destroy();
+    progressContainer.destroy();
+    scene.input.keyboard.removeListener('keydown-ESC', escHandler);
+    
+    // Show cancellation message
+    showDialog(scene, "Camping setup cancelled.\n(Press SPACE to continue)");
+    scene.input.keyboard.once("keydown-SPACE", () => {
+      hideDialog(scene);
+    });
+  };
+  
+  scene.input.keyboard.on('keydown-ESC', escHandler);
+}

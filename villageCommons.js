@@ -35,7 +35,13 @@ const GAME_CONFIG = {
     default: "arcade",
     arcade: { gravity: { y: 0 }, debug: false }
   },
-  scene: [MainGameScene] // Only this scene for simplicity
+  scene: [MainGameScene, CampingScene, FishingScene], // Added all scenes
+  pixelArt: true,
+  roundPixels: true,
+  render: {
+    pixelArt: true,
+    antialias: false
+  }
 };
 
 /* =======================================================

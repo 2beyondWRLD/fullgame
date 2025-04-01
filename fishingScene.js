@@ -54,6 +54,11 @@ class FishingScene extends Phaser.Scene {
       { name: 'Best Rod', difficultyReduction: 2 }
     ];
     this.selectedRodIndex = 0;
+    this.returnZone = null;
+  }
+
+  init(data) {
+    this.returnZone = data.zone;
   }
 
   preload() {
@@ -347,6 +352,8 @@ class FishingScene extends Phaser.Scene {
     this.physics.add.collider(this.boat, this.collisions, () => {
       console.log(`Boat collision at x=${this.boat.x}, y=${this.boat.y}`);
     });
+
+    this.returnZone = this.scene.settings.data.returnZone;
   }
 
   startFishingSequence(fromBoat) {
@@ -611,7 +618,7 @@ class FishingScene extends Phaser.Scene {
       if (this.isFishing === 'reeling') {
         this.narrationBox.setVisible(true);
         this.narrationText.setVisible(true);
-        this.narrationText.setText('It’s pulling back!\nKeep reeling!');
+        this.narrationText.setText("It's pulling back!\nKeep reeling!");
         this.time.delayedCall(2000, () => {
           if (this.isFishing === 'reeling') {
             this.narrationText.setText('Almost there—steady now!');
@@ -847,9 +854,18 @@ class FishingScene extends Phaser.Scene {
       }
     }
     this.scene.start('MainGameScene', { 
-      zone: zoneList.find(z => z.name === "Village"),
+      zone: this.returnZone || zoneList.find(z => z.name === "Village"),
       inventory: mainScene.localInventory,
       promptCount: mainScene.promptCount
     });
+  }
+
+  reelInFish() {
+    if (this.isFishing === 'reeling') {
+      this.narrationBox.setVisible(true);
+      this.narrationText.setVisible(true);
+      this.narrationText.setText("It's pulling back! Keep reeling!");
+      // ... existing code ...
+    }
   }
 }
